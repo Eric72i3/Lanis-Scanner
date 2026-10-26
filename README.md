@@ -9,13 +9,13 @@ Das Skript ist **nur lesend**: Es meldet sich mit deinem eigenen Konto an, schau
 Nach einem Lauf liegt `hausaufgaben.txt` im Projektordner. Sie wird jedes Mal komplett neu geschrieben:
 
 ```
-Hausaufgaben (Stand 26.10.2026, 18:13:54)
+Hausaufgaben (Stand 01.01.2030, 12:00:00)
 
 === OFFEN (2) ===
 
-Fach: M 11BG07
-Aufgabe: S. 61, Nr. 10
-Fälligkeit: bis Mo, 26.10. um 22:00 Uhr (Abgabe)
+Fach: Mathe Beispielkurs
+Aufgabe: Aufgabe 1 bis 3 lösen
+Fälligkeit: bis Fr, 03.01. um 20:00 Uhr (Abgabe)
 Status: offen
 Quelle: Lanis
 
@@ -69,7 +69,7 @@ Wichtig: Trag die Zugangsdaten nie in den Code, in eine Textdatei oder in ein Gi
 In `src/login.js` steht ganz oben die Schulnummer:
 
 ```js
-const SCHULNUMMER = "6328";
+const SCHULNUMMER = "1234";
 ```
 
 Ersetze sie durch die Nummer deiner Schule. Du findest sie in der Login-URL deiner Schule: `https://login.schulportal.hessen.de/?i=DEINE_NUMMER`.
@@ -85,7 +85,7 @@ npm run hausaufgaben
 Nach wenigen Sekunden steht `hausaufgaben.txt` im Projektordner und im Terminal erscheint z. B.:
 
 ```
-hausaufgaben.txt geschrieben: 2 offen, 3 erledigt.
+hausaufgaben.txt geschrieben: 1 offen, 1 erledigt.
 ```
 
 Starte das Skript nur, wenn du es brauchst. Es läuft nicht im Hintergrund und nicht automatisch.
@@ -104,7 +104,7 @@ Ablauf in Kurzform:
 
 1. Login mit den Umgebungsvariablen.
 2. Seite "Mein Unterricht" laden und alle Einträge mit Hausaufgabe einsammeln.
-3. Fälligkeit bestimmen: Gibt es eine Abgabefrist (z. B. "bis Do, 29.10. um 08:45 Uhr"), gilt sie. Lanis nennt dort kein Jahr, deshalb wird das Jahr vom Eintragsdatum übernommen. Gibt es keine Frist, steht das Eintragsdatum als Hinweis da.
+3. Fälligkeit bestimmen: Gibt es eine Abgabefrist (z. B. "bis Fr, 03.01. um 20:00 Uhr"), gilt sie. Lanis nennt dort kein Jahr, deshalb wird das Jahr vom Eintragsdatum übernommen. Gibt es keine Frist, steht das Eintragsdatum als Hinweis da.
 4. Nach Fälligkeit sortieren, in offen und erledigt aufteilen, Datei schreiben.
 5. Browser schließen.
 
